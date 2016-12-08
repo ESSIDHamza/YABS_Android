@@ -1,0 +1,74 @@
+<form name="modificationLivreForm" ng-controller="modificationLivreCtrl"
+	ng-submit="modifierLivre ()">
+	<h3 class="text-center">
+		<label class="label label-success">{{msgSuccModif}}</label>
+	</h3>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Titre" class="form-control"
+					ng-model="titre" name="titre" required /> <span class="erreur"
+					ng-show="modificationLivreForm.titre.$dirty && modificationLivreForm.titre.$error.required">Veuillez
+					saisir le titre !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Auteur" class="form-control"
+					ng-model="auteur" name="auteur" required /> <span class="erreur"
+					ng-show="modificationLivreForm.auteur.$dirty && modificationLivreForm.auteur.$error.required">Veuillez
+					saisir l'auteur !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<input type="number" min="0" placeholder="Nombre de copies"
+					class="form-control" name="nbrCopies" ng-model="nbrCopies" required />
+				<span class="erreur"
+					ng-show="modificationLivreForm.nbrCopies.$dirty && modificationLivreForm.nbrCopies.$error.number">Veuillez
+					saisir le nombre de copies disponibles !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4">
+			<div class="form-group">
+				<input type="text" placeholder="Catégorie" class="form-control"
+					ng-model="categorie" name="categorie" required /> <span
+					class="erreur"
+					ng-show="modificationLivreForm.categorie.$dirty && modificationLivreForm.categorie.$error.required">Veuillez
+					saisir la catégorie !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="number" step="0.01" placeholder="Prix"
+					class="form-control" ng-model="prix" name="prix" min="0" required />
+				<span class="erreur"
+					ng-show="modificationLivreForm.prix.$dirty && modificationLivreForm.prix.$error.number">Veuillez
+					saisir le prix !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<textarea placeholder="Synopsis" class="form-control"
+					ng-model="synopsis" name="synopsis" required></textarea>
+				<span class="erreur"
+					ng-show="modificationLivreForm.synopsis.$dirty && modificationLivreForm.synopsis.$error.required">Veuillez
+					saisir le synopsis !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-3"
+			style="padding-top: 15px; padding-bottom: 5px">
+			<input type="submit" value="Modifier" class="btn btn-success"
+				ng-disabled="modificationLivreForm.$invalid" />
+		</div>
+		<div class="col-md-3" style="padding-top: 15px; padding-bottom: 5px">
+			<input type="reset" value="Tout effacer" class="btn btn-danger" />
+		</div>
+	</div>
+</form>

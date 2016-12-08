@@ -1,0 +1,123 @@
+<header class="bande">
+	<div class="row">
+		<div class="col-md-3">
+			<img src="assets/images/yabs.png" alt="YABS" width="200" height="100" />
+			<marquee>
+				<h5>Votre meilleure librairie en ligne</h5>
+			</marquee>
+		</div>
+		<div class="col-md-9">
+			<h4>
+				<span class="label label-info pull-right"
+					ng-controller="nombreUtilisateursConnectesCtrl"><span
+					class="badge">{{nombreUtilisateursConnectes}}</span> utilisateur(s)
+					connecté(s)</span>
+			</h4>
+			<div ng-show="utilisateur==null">
+				<div class="row" ng-controller="authentificationCtrl"
+					ng-init="affichageMessageErreurAuthentification=false">
+					<form name="authentificationForm" ng-submit="authentifier ()">
+						<div class="col-md-offset-3 col-md-3" style="padding-top: 15px">
+							<div class="input-group">
+								<span class="input-group-addon glyphicon glyphicon-user"></span>
+								<input type="text" placeholder="Login" class="form-control"
+									ng-model="login" name="login" required /> <span class="erreur"
+									ng-show="authentificationForm.login.$dirty && authentificationForm.login.$error.required">Veuillez
+									saisir votre login !</span>
+							</div>
+						</div>
+						<div class="col-md-3" style="padding-top: 15px">
+							<div class="input-group">
+								<span class="input-group-addon glyphicon glyphicon-lock"></span>
+								<input type="password" placeholder="Mot de passe"
+									class="form-control" ng-model="mdp" name="mdp" required /> <span
+									class="erreur"
+									ng-show="authentificationForm.mdp.$dirty && authentificationForm.mdp.$error.required">Veuillez
+									saisir votre mot de passe !</span>
+							</div>
+						</div>
+						<div class="col-md-3" style="padding-top: 15px">
+							<input type="submit" value="Se connecter" class="btn btn-primary"
+								ng-disabled="authentificationForm.$invalid" />
+						</div>
+					</form>
+					<br />
+					<p class="text-center">
+						<span class="erreur"
+							ng-show="affichageMessageErreurAuthentification">Veuillez
+							vérifier votre login et/ou mot de passe !</span>
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-md-offset-3 col-md-9" style="padding-top: 5px">
+						<p class="text-center">
+							<a href="#inscription" class="lien">Vous n'êtes encore pas
+								membre ? Inscrivez-vous maintenant !</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" ng-show="utilisateur!=null">
+				<div class="col-md-12">
+					<form ng-controller="deconnexionCtrl" ng-submit="seDeconnecter ()">
+						<h1 class="text-center bienvenue animated swing">Bienvenue
+							{{utilisateur.nom + " " + utilisateur.prenom}} !</h1>
+						<input type="submit" value="Se déconnecter"
+							class="btn btn-primary pull-right" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<div class="navbar-header" style="padding-bottom: 20px">
+						<button class="navbar-toggle" data-toggle="collapse"
+							data-target="#mon-menu">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a href="#accueil" class="navbar-brand"><img
+							src="assets/images/yabs.png" alt="YABS" width="100" height="50" /></a>
+					</div>
+					<div class="collapse navbar-collapse" id="mon-menu">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active animated rollIn hinge"><a href="#accueil"
+								style="padding-bottom: 35px">Accueil</a></li>
+							<li class=" animated rollIn hinge" ng-show="utilisateur==null"><a
+								href="#inscription">Inscription</a></li>
+							<li class=" animated rollIn hinge" ng-show="utilisateur!=null"><a
+								href="#modification-infos">Modification infos</a></li>
+							<li class=" animated rollIn hinge"
+								ng-show="utilisateur!=null && utilisateur.admin=='true'"><a
+								href="#ajout-livre">Ajout livre</a></li>
+							<li class=" animated rollIn hinge"
+								ng-show="utilisateur!=null && utilisateur.panier!=null"><a
+								href="" ng-controller="payerCtrl" ng-click="payer ()">Payer
+									<span class="glyphicon glyphicon-shopping-cart"></span><span
+									class="badge badge-default"><span
+										ng-if="!utilisateur.panier.length">1</span>{{utilisateur.panier.length}}</span>
+							</a></li>
+							<li class=" animated rollIn hinge"><a href="#liste-livres"
+								onclick="location.reload()">Lister Livres</a></li>
+							<li class=" animated rollIn hinge"
+								ng-show="utilisateur!=null && utilisateur.admin=='true'"><a
+								href="#statistiques">Statistiques</a></li>
+							<li class="dropdown"><a href="" class="dropdown-toggle"
+								data-toggle="dropdown">Catégories<span class="caret"></span></a>
+								<ul class="dropdown-menu" ng-controller="categoriesCtrl">
+									<li ng-if="livreUnique==null"
+										ng-repeat="categorie in categories"><a
+										href="#liste-livres" ng-click="setCategorie (categorie)">{{categorie}}</a></li>
+									<li ng-if="livreUnique!=null"><a href="#liste-livres"
+										ng-click="setCategorie (livreUnique.categorie)">{{livreUnique.categorie}}</a></li>
+								</ul></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="mon-application">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yet Another BookStore</title>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="assets/css/animate.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+	<div class="container-full"
+		ng-include=" '/PresentationYABS/template/header.html' "></div>
+	<div class="container" ng-view></div>
+	<div class="container-full"
+		ng-include=" '/PresentationYABS/template/footer.html' "></div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-route.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="assets/js/d3.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular-charts.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+</body>
+</html>

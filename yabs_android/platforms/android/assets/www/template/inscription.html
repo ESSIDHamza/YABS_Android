@@ -1,0 +1,74 @@
+<form name="inscriptionForm" ng-controller="inscriptionCtrl"
+	ng-submit="inscrire ()">
+	<h3 class="text-center">
+		<span class="label label-success">{{msgSuccIns}}</span>
+	</h3>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Nom" class="form-control"
+					ng-model="nom" name="nom" required /> <span class="erreur"
+					ng-show="inscriptionForm.nom.$dirty && inscriptionForm.nom.$error.required">Veuillez
+					saisir votre nom !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Prénom" class="form-control"
+					ng-model="prenom" name="prenom" required /> <span class="erreur"
+					ng-show="inscriptionForm.prenom.$dirty && inscriptionForm.prenom.$error.required">Veuillez
+					saisir votre prénom !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-home"></span> <input
+					type="text" placeholder="Adresse" class="form-control"
+					ng-model="adresse" name="adresse" required /> <span class="erreur"
+					ng-show="inscriptionForm.adresse.$dirty && inscriptionForm.adresse.$error.required">Veuillez
+					saisir votre adresse !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-envelope"></span>
+				<input type="email" placeholder="E-mail" class="form-control"
+					ng-model="mail" name="mail" required /> <span class="erreur"
+					ng-show="inscriptionForm.mail.$dirty && inscriptionForm.mail.$error.required">Veuillez
+					saisir votre e-mail !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span> <input
+					type="text" placeholder="Login" class="form-control"
+					ng-model="login" name="login" required /> <span class="erreur"
+					ng-show="inscriptionForm.login.$dirty && inscriptionForm.nom.$login.required">Veuillez
+					saisir votre login !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span> <input
+					type="password" placeholder="Mot de passe" class="form-control"
+					ng-model="mdp" name="mdp" required /> <span class="erreur"
+					ng-show="inscriptionForm.mdp.$dirty && inscriptionForm.mdp.$error.required">Veuillez
+					saisir votre mot de passe !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-3"
+			style="padding-top: 15px; padding-bottom: 5px">
+			<input type="submit" value="S'inscrire" class="btn btn-success"
+				ng-disabled="inscriptionForm.$invalid" />
+		</div>
+		<div class="col-md-3" style="padding-top: 15px; padding-bottom: 5px">
+			<input type="reset" value="Tout effacer" class="btn btn-danger" />
+		</div>
+	</div>
+</form>

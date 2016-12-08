@@ -1,0 +1,35 @@
+.bande {
+	background-color: black;
+	color: white;
+}
+
+.lien {
+	color: red;
+	text-decoration: none;
+}
+
+.lien:hover {
+	color: green;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.erreur {
+	color: red;
+	font-weight: bold;
+}
+
+.bienvenue {
+	color: #80FF80;
+	animation-duration: 1.5s;
+}
+
+.attribut-livre {
+	color: red;
+	font-weight: bold;
+}
+
+#chart {
+	height: 500px;
+	width: 500px;
+}

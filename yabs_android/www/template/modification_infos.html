@@ -1,0 +1,74 @@
+<form name="modificationForm" ng-controller="modificationCtrl"
+	ng-submit="modifier ()">
+	<h3 class="text-center">
+		<span class="label label-success">{{msgSuccModif}}</span>
+	</h3>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Nom" class="form-control"
+					ng-model="nom" name="nom" required /> <span class="erreur"
+					ng-show="modificationForm.nom.$dirty && modificationForm.nom.$error.required">Veuillez
+					saisir votre nom !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="form-group">
+				<input type="text" placeholder="Prénom" class="form-control"
+					ng-model="prenom" name="prenom" required /> <span class="erreur"
+					ng-show="modificationForm.prenom.$dirty && modificationForm.prenom.$error.required">Veuillez
+					saisir votre prénom !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-home"></span> <input
+					type="text" placeholder="Adresse" class="form-control"
+					ng-model="adresse" name="adresse" required /> <span class="erreur"
+					ng-show="modificationForm.adresse.$dirty && modificationForm.adresse.$error.required">Veuillez
+					saisir votre adresse !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-envelope"></span>
+				<input type="email" placeholder="E-mail" class="form-control"
+					ng-model="mail" name="mail" required /> <span class="erreur"
+					ng-show="modificationForm.mail.$dirty && modificationForm.mail.$error.required">Veuillez
+					saisir votre e-mail !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" style="padding-top: 15px">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span> <input
+					type="text" placeholder="Login" class="form-control"
+					ng-model="login" name="login" required /> <span class="erreur"
+					ng-show="modificationForm.login.$dirty && modificationForm.nom.$login.required">Veuillez
+					saisir votre login !</span>
+			</div>
+		</div>
+		<div class="col-md-offset-4 col-md-4" style="padding-top: 15px">
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span> <input
+					type="password" placeholder="Mot de passe" class="form-control"
+					ng-model="mdp" name="mdp" required /> <span class="erreur"
+					ng-show="modificationForm.mdp.$dirty && modificationForm.mdp.$error.required">Veuillez
+					saisir votre mot de passe !</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-3"
+			style="padding-top: 15px; padding-bottom: 5px">
+			<input type="submit" value="Modifier" class="btn btn-success"
+				ng-disabled="modificationForm.$invalid" />
+		</div>
+		<div class="col-md-3" style="padding-top: 15px; padding-bottom: 5px">
+			<input type="reset" value="Tout effacer" class="btn btn-danger" />
+		</div>
+	</div>
+</form>
