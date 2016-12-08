@@ -2,7 +2,7 @@
 <widget id="tn.rnu.insat.essid.hamza" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>YABS</name>
     <description>
-        Application mobile de la librairie en ligne Yet Another BookStrore.
+        Application mobile de la librairie en ligne Yet Another BookStore.
     </description>
     <author email="hamza931222@gmail.com" href="http://hamza-essid.fr">
         Hamza ESSID
